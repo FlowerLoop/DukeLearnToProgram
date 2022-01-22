@@ -15,20 +15,33 @@ function showGray() {
     pixel.setRed(avg)
     pixel.setGreen(avg)
     pixel.setBlue(avg)
-  }  
+  }
   imgcurr.drawTo(canvas)
 }
 
 function showRainbow() {
   var width = imgcurr.getWidth()
-  for (var pixel of imgcurr.values())
-    if (pixel.getX() < width/3) {
-      pixel.setRed(200)
-    } else if (pixel.getX() < 2*(width/3)) {
-      pixel.setGreen(200)
-    } else {
+  for (var pixel of imgcurr.values()) {
+    if (pixel.getX() < width / 7) {
+      pixel.setRed(148)
+      pixel.setBlue(211)
+    } else if (pixel.getX() < 2 * (width / 7)) {
+      pixel.setRed(75)
+      pixel.setBlue(130)
+    } else if (pixel.getX() < 3 * (width / 7)) {
       pixel.setBlue(200)
+    } else if (pixel.getX() < 4 * (width / 7)) {
+      pixel.setGreen(180)
+    } else if (pixel.getX() < 5 * (width / 7)) {
+      pixel.setRed(150)
+      pixel.setGreen(150)
+    } else if (pixel.getX() < 6 * (width / 7)) {
+      pixel.setRed(180)
+      pixel.setGreen(80)
+    } else {
+      pixel.setRed(200)
     }
+  }
   imgcurr.drawTo(canvas)
 }
 
@@ -37,9 +50,9 @@ function showOld() {
     var r1 = Math.floor(Math.random() * 80 - 40);
     var r2 = Math.floor(Math.random() * 80 - 40);
     var r3 = Math.floor(Math.random() * 80 - 40);
-    pixel.setGreen(pixel.getGreen()  + r1)
-    pixel.setRed(pixel.getRed()  + r2)
-    pixel.setBlue(pixel.getGreen()  + r3)         
+    pixel.setGreen(pixel.getGreen() + r1)
+    pixel.setRed(pixel.getRed() + r2)
+    pixel.setBlue(pixel.getGreen() + r3)
   }
   imgcurr.drawTo(canvas)
 }
@@ -48,13 +61,13 @@ function showRedFilter() {
   for (var pixel of imgcurr.values()) {
     var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3
     if (avg < 128) {
-      pixel.setRed(2*avg)
+      pixel.setRed(2 * avg)
       pixel.setGreen(0)
       pixel.setBlue(0)
     } else {
       pixel.setRed(255)
-      pixel.setGreen(2*avg - 255)
-      pixel.setBlue(2*avg - 255)
+      pixel.setGreen(2 * avg - 255)
+      pixel.setBlue(2 * avg - 255)
     }
   }
   imgcurr.drawTo(canvas)
@@ -66,9 +79,9 @@ function mathFilter() {
   for (var pixel of imgcurr.values()) {
     var x = pixel.getX()
     var y = pixel.getY()
-    pixel.setRed(pixel.getRed() + 50*Math.sin((x + y)*10*2*Math.PI/(width + height)))
-    pixel.setGreen(pixel.getGreen() + 50*Math.sin((x + y)*10*2*Math.PI/(width + height)))
-    pixel.setBlue(pixel.getBlue() + 50*Math.sin((x + y)*10*2*Math.PI/(width + height)))
+    pixel.setRed(pixel.getRed() + 50 * Math.sin((x + y) * 10 * 2 * Math.PI / (width + height)))
+    pixel.setGreen(pixel.getGreen() + 50 * Math.sin((x + y) * 10 * 2 * Math.PI / (width + height)))
+    pixel.setBlue(pixel.getBlue() + 50 * Math.sin((x + y) * 10 * 2 * Math.PI / (width + height)))
   }
   imgcurr.drawTo(canvas)
 }

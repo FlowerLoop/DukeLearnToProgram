@@ -15,22 +15,39 @@
   }
   
   canvas {
-    height: 300px;
+    position: relative;
+    left: 100px;
+    height: 400px;
     background-color: black;
   }
   
+  button {
+    padding: 10px 10px 20px 20px;
+    border-radius: 15px;
+    transition-duration: 0.5ms;
+  }
+
   .grid-container {
     position: relative;
-    top: 50px;
+    top: 120px;
     float: right;
-    width: 50%;
+    width: 40%;
     display: grid;
     grid-template-columns: auto;
     justify-content: center;
-    grid-gap: 10px;
+    grid-gap: 15px;
   }
   
+  .filter {
+    background-color: lightgrey;
+  }
+
+  .filter:hover {
+    background-color: white;
+    border: 1 px solid black;
+  }
+
   .reset {
     background-color: red;
-    color: white;
+    color: black;
   }
