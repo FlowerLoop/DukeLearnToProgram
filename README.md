@@ -1,6 +1,6 @@
 # Image Filter Project
 
-Deployed at https://flowerloop.github.io/Image-Filter/.
+Deployed at <p><a href="https://flowerloop.github.io/Image-Filter/" target="_blank">here</a></p>.
 
 Final project of the coursera course **Programming Foundations with JavaScript**, HTML and CSS from Duke University, at Coursera https://www.coursera.org/learn/duke-programming-web.
 
